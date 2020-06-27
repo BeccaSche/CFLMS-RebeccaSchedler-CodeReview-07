@@ -1,0 +1,39 @@
+<div class="container">
+
+    <h2 class="c1 my-3">Your Adventures:</h2>
+
+    <div class="cart-item" *ngFor="let item of items; index as itemID">
+        <span class="c2 m-2"><b>{{ item.destination }}</b></span>
+        <span>only € {{ item.price }}.- p.p. including {{item.incl}}</span>
+        <input type="submit" class="ml-3 btn-small btn-outline-dark" value="Delete" (click)="onDeleteButton(itemID)">
+    </div>
+
+    <div class="cart-item">
+        <h3 class="c1 my-3">Total: € {{fullPrice}}</h3>
+        <h3><span class="badge badge-success m-2" [class.d-none]="fullPrice < 1000">
+            You get 10% discount! 
+        </span></h3>
+        <h3><span class="badge badge-danger m-2" [class.d-none]="fullPrice < 2000">
+            You even get 20% discount! 
+        </span></h3>
+    </div>
+        
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <div>
+        <label>
+        Name
+        </label>
+        <input class="ml-2" id="name" type="text" formControlName="name">
+    </div>
+     
+    <div>
+        <label>
+        Address
+        </label>
+        <input class="ml-2" id="address" type="text" formControlName="address">
+    </div>
+    
+        <button class="btn btn-outline-dark my-3" type="submit">Book Now!</button>
+    </form>
+</div>
+<div class="uselessContainer"></div>

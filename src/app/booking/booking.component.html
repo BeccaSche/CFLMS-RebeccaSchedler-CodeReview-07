@@ -1,0 +1,17 @@
+
+<div class="container-fluid">
+    <br>
+    <button class="btn btn-outline-dark my-2 my-sm-0 float-right m-4" type="submit" routerLink="/cart">View Cart</button><br>
+    <div class="row m-4 d-flex justify-content-between">
+        <div *ngFor="let offer of offers; index as offerId" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 m-2">
+            <img src="{{offer.pic}}" alt="pic of destination" [title]="offer.destination">
+            <h4>
+                <a [routerLink]="['/offers', offerId]" class="c2">{{offer.destination}}</a>
+            </h4>
+            <p class="text-muted">{{offer.duration}} start: {{offer.start}} <br>
+                Included: {{offer.incl}}<br>
+                € {{offer.price}}.- per Person</p>
+        </div>
+    </div>
+</div>
+<div class="uselessContainer"></div>

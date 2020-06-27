@@ -1,0 +1,16 @@
+<div class="container">
+    <br>
+    <button class="btn btn-outline-dark my-2 my-sm-0 float-right m-4" type="submit" routerLink="/cart">View Cart</button>
+    <br>
+    <h2  class="c1 my-4">Travel Details</h2>
+
+    <div *ngIf="offer">
+        <img src="{{offer.pic}}" alt="pic of destination" [title]="offer.destination">
+        <h4 class="c2 my-2">{{ offer.destination }}</h4>
+        <p class="text-muted"><b>{{offer.duration}}</b> start: <b>{{offer.start}} </b><br>
+            Including: {{offer.incl}}<br>
+            € {{offer.price}}.- per Person</p>
+        <button (click)="addToCart(offer)" class="btn btn-outline-dark">Add to Cart</button>
+    </div>
+</div>
+<div class="uselessContainer"></div>

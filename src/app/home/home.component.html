@@ -1,0 +1,92 @@
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/assets/img/caruselBayBoats.jpg" class="d-block w-100" alt="Boats in a Bay">
+        </div>
+        <div class="carousel-item">
+            <img src="/assets/img/caruselBeachParty.jpg" class="d-block w-100" alt="beach party">
+        </div>
+        <div class="carousel-item">
+            <img src="/assets/img/caruselGuyCliff.jpg" class="d-block w-100" alt="Guy at a Cliff">
+        </div>
+        <div class="carousel-item">
+            <img src="/assets/img/caruselBeachhuts.jpg" class="d-block w-100" alt="beach huts">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="jumbotron jumbotron-fluid c3">
+    <div class="container">
+        <h1 class="display-4 c1">only<b>ISLANDS</b> - unique island adventures</h1>
+        <p class="lead">Iceland - Madeira - Elba - French Polynesia - Falkland Islands -St. Lucia - Galapagos - Irland -
+            Puerto Rico - Färöer - Malta - Indonesia - New Zealand - Aruba and many more!</p>
+    </div>
+</div>
+
+<div class="container">
+
+<hr>
+
+    <h2 class="c2">Order our Catalogue</h2>
+
+    <form [formGroup]="contact" (ngSubmit)="onSubmit()">
+        <label class="m-2 c1">
+            Full Name:
+            <input type="text" class="form-control" formControlName="fullname">
+        </label>
+        <label class="m-2 c1">
+            Adress
+            <input type="text" class="form-control" formControlName="adress">
+        </label>
+        <label class="m-2 c1">
+            City
+            <input type="text" class="form-control" formControlName="city">
+        </label>
+        <label class="m-2 c1">
+            Email:
+            <input type="email" class="form-control" formControlName="email">
+        </label>
+        <input type="submit" class="btn btn-primary m-2" value="Submit">
+    </form>
+    <p>
+        <ng-template [ngIf]="this.submitted">Thank you {{this.contact.value.fullname}}! We will send a catalogue to you!
+        </ng-template>
+    </p>
+
+    <hr>
+
+    <h2 class="c2">Latest staff adventures:</h2>
+    <div class="row d-flex justify-content-between">
+        <div class="col-6 col-md-6 col-lg-3">
+            <img src="/assets/img/homeBlogNZ.jpg" class="rounded" alt="NZ">
+            <h5><a class="c1" href="/blog">Magical Island of New Zealand</a></h5>
+            <div><small>by Brian</small></div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+            <img src="/assets/img/homeBlogGB.jpg" class="rounded" alt="NZ">
+            <h5><a class="c1" href="/blog">Very British - Big Island Tour</a></h5>
+            <div><small>by Claire</small></div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+            <img src="/assets/img/homeBlogEW.jpg" class="rounded" alt="NZ">
+            <h5><a class="c1" href="/blog">Welcome to the End of the World</a></h5>
+            <div><small>by Paul</small></div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+            <img src="/assets/img/homeBlogWB.jpg" class="rounded"  alt="NZ">
+            <h5><a class="c1" href="/blog">Teneriffa in the rain</a></h5>
+            <div><small>by Charlotte</small></div>
+        </div>
+
+    </div>
+    <div class="uselessContainer"></div>
+
+</div>
